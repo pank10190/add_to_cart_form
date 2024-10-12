@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+
+            border: 5px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            background-color: #ffffff;
+            width: 450px;
+            height: auto;
+
+        }
+
+        body {
+            background-color: black;
+            /* font-family: Monospace; */
+            font-family: system-ui;
+        }
+
+        .pp {
+            /* width: 100%; */
+            text-align: center;
+            border-bottom: 1px solid #AEAEAE;
+            line-height: 0.1em;
+            /* margin: 10px 0 20px; */
+            color: #F9629F;
+            font-size: 22px;
+            left: 2%;
+            right: 2%;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .pp span {
+            background: #fff;
+            padding: 0 10px;
+            left: 2%;
+            right: 2%;
+        }
+
+        .aa {
+            height: fit-content;
+            border: 0.5px solid #AEAEAE;
+            color: gray;
+            width: 350px;
+            padding: 10px;
+            left: 2%;
+            right: 2%;
+            margin-top: 10%;
+            margin-bottom: 10px;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        /* .aa span {
+            background: aliceblue;
+            padding: 0 10px;
+            left: 2%;
+            right: 2%;
+        } */
+
+        .specifyColor {
+            accent-color: #F9629F;
+            color: #F9629F;
+        }
+
+        .off {
+            background-color: #F9629F;
+            color: aliceblue;
+            height: 15px;
+            font-size: 12px;
+            width: 50px;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .doller {
+            text-align: right;
+            margin-left: auto;
+            color: black;
+            width: 100px;
+        }
+
+        .cuttext {
+            font-size: 12px;
+            color: gray;
+            text-align: left;
+            text-decoration-line: line-through;
+            margin-right: 21px;
+        }
+
+        .row {
+            width: 350px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: #F9629F;
+            border-radius: 5px;
+            padding: 5px;
+            margin-left: 40px;
+            margin-right: 40px;
+            border: #F9629F;
+            margin-top: 50px;
+            height: 40px;
+            width: 380px;
+            color: #fff
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dd-button {
+            display: inline-block;
+            border: 1px solid gray;
+            border-radius: 4px;
+            padding: 1px 5px 1px 5px;
+            background-color: #fff;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .dd-button:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid black;
+        }
+
+        .dd-button:hover {
+            background-color: #eeeeee;
+        }
+
+
+        .dd-input {
+            display: none;
+        }
+
+        .dd-menu {
+            position: absolute;
+            top: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0;
+            margin: 2px 0 0 0;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            list-style-type: none;
+        }
+
+        .dd-input+.dd-menu {
+            display: none;
+        }
+
+        .dd-input:checked+.dd-menu {
+            display: block;
+        }
+
+        .dd-menu li {
+            padding: 10px 20px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .dd-menu li:hover {
+            background-color: #f6f6f6;
+        }
+
+        .dd-menu li a {
+            display: block;
+            margin: -10px -20px;
+            padding: 10px 20px;
+        }
+
+        .dd-menu li.divider {
+            padding: 0;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .table {
+            float: left;
+            margin-left: 40px;
+            color: black;
+        }
+
+        .stand {
+            font-size: 12px;
+            margin-left: 20px;
+            color: black;
+        }
+
+        .free_d {
+            float: left;
+            margin-left: 40px;
+            margin-top: 10px;
+            color: #F9629F;
+        }
+
+        .total {
+            float: right;
+            margin-right: 40px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="pp"><span><b>YAY! It's BOGO</b></span></p>
+
+        <center>
+            <div class="aa">
+                <div class="row">
+                    <div style="width:110px;"> <input type="radio" id="Unit1" name="unit" checked class="specifyColor"
+                            value="Unit1">
+
+                        <b style=" color: black;"> 1 Unit <span class="stand">&nbsp;&nbsp; Standard
+                                Price</span></b>
+                    </div>
+
+                    <span class="off">10% Off</span> <span class="doller"><b>$10.00 USD</b><br> <span
+                            class="cuttext">$24.00
+                            USD</span></span>
+                    <br>
+
+                </div>
+            </div>
+        </center>
+
+        <center>
+            <div class="aa" style="height: 150px;">
+                <span
+                    style="float:right; color:#fff; margin-top: -10px; margin-right: -10px;  border-radius: 5px;  background-color: #F9629F;">MOST
+                    POPULAR</span>
+                <div class="row">
+                    <div style="width:110px;"> <input type="radio" id="Unit2" name="unit" class="specifyColor"
+                            value="Unit2">
+
+                        <b style=" color: black;"> 2 Unit <span class="stand">&nbsp;&nbsp;</span></b>
+                    </div>
+
+                    <span class="off">20% Off</span> <span class="doller"><b>$18.00 USD</b><br> <span
+                            class="cuttext">$24.00
+                            USD</span></span>
+                    <br>
+
+                </div>
+
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>Size</td>
+                            <td>Color</td>
+                        </tr>
+                        <tr>
+                            <td>#1</td>
+                            <td>
+                                <label class="dropdown">
+
+                                    <div class="dd-button">
+                                        S &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </div>
+
+                                    <input type="checkbox" class="dd-input" id="test">
+
+                                    <ul class="dd-menu">
+                                        <!-- <li>S</li>
+                                        <li>M</li>
+                                        <li>L</li> -->
+
+                                    </ul>
+
+                                </label>
+                            </td>
+                            <td>
+                                <label class="dropdown">
+
+                                    <div class="dd-button">
+                                        Black &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </div>
+
+                                    <input type="checkbox" class="dd-input" id="test">
+
+                                    <ul class="dd-menu">
+                                        <!-- <li>RED</li>
+                                        <li>Black</li>
+                                        <li>Green</li> -->
+
+                                    </ul>
+
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#2</td>
+                            <td>
+                                <label class="dropdown">
+
+                                    <div class="dd-button">
+                                        S &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </div>
+
+                                    <input type="checkbox" class="dd-input" id="test">
+
+                                    <ul class="dd-menu">
+                                        <!-- <li>S</li>
+                                        <li>M</li>
+                                        <li>L</li> -->
+
+                                    </ul>
+
+                                </label>
+                            </td>
+                            <td>
+                                <label class="dropdown">
+
+                                    <div class="dd-button">
+                                        Red &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </div>
+
+                                    <input type="checkbox" class="dd-input" id="test">
+
+                                    <ul class="dd-menu">
+                                        <!-- <li>RED</li>
+                                        <li>Yellow</li>
+                                        <li>Green</li> -->
+
+                                    </ul>
+
+                                </label>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </center>
+
+        <center>
+            <div class="aa">
+                <div class="row">
+                    <div style="width:110px;"> <input type="radio" id="Unit3" name="unit" class="specifyColor"
+                            value="Unit3">
+
+                        <b style=" color: black;"> 3 Unit<span class="stand">&nbsp;&nbsp;</span></b>
+                    </div>
+
+                    <span class="off">30% Off</span> <span class="doller"><b>$24.00 USD</b>
+                        <br>
+                        <span class="cuttext">$24.00
+                            USD</span>
+                    </span>
+                    <br>
+
+                </div>
+            </div>
+        </center>
+        <div class="free_d"><b>Free Delivery</b></div>
+        <div class="total"><span class="doller">Total &nbsp; &nbsp; $24.00
+                USD</span></div>
+        <button type="button" class="btn">
+            + Add to Cart</button>
+    </div>
+</body>
+
+</html>
